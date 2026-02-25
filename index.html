@@ -1,334 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Ami – Decoraciones Artesanales | Barranquilla</title>
-  <meta name="description" content="Tienda virtual de decoraciones artesanales en Icopor, Foamy y Cartón. Barranquilla, Colombia. ¡Trae tu idea, nosotros los pinceles y colores!">
-  <link rel="icon" href="img/Logo_monami-modified.ico">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Ami – Decoraciones Artesanales | Barranquilla</title>
+    <meta name="description"
+        content="Tienda virtual de decoraciones artesanales en Icopor, Foamy y Cartón. Barranquilla, Colombia. ¡Trae tu idea, nosotros los pinceles y colores!">
+    <link rel="icon" href="img/Logo_monami-modified.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-  <!-- ====== NAVBAR ====== -->
-  <nav class="navbar" id="navbar">
-    <a href="index.html" class="nav-logo">
-      <img src="img/Logo_monami-modified.png" alt="Mon Ami Logo">
-      <span class="nav-logo-text">Mon Ami</span>
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="img/Logo_monami-modified.png" alt="Mon Ami Logo">
+            <span class="nav-logo-text">Mon Ami</span>
+        </a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="shop.html">Tienda</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="nav-actions">
+            <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="nav-ig-btn" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <button id="cart-btn" aria-label="Ver carrito">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Carrito</span>
+                <span class="cart-badge hidden">0</span>
+            </button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Barranquilla, Colombia
+                </div>
+                <h1 class="hero-title">
+                    Trae tu idea,<br>
+                    <span class="gradient-text">nosotros los pinceles</span><br>
+                    y colores 🎨
+                </h1>
+                <p class="hero-subtitle">
+                    Creamos decoraciones únicas en Icopor, Foamy y Cartón para tus eventos especiales.
+                    Cada pieza es hecha con mucho amor y creatividad. <strong>¡Coleccionemos sonrisas!</strong>
+                </p>
+                <div class="hero-ctas">
+                    <a href="shop.html" class="btn btn-primary">
+                        <i class="fas fa-store"></i> Ver Tienda
+                    </a>
+                    <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 😊 Me gustaría cotizar una decoración personalizada."
+                        target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> Cotizar
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">+200</span>
+                        <span class="stat-label">Diseños</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Artesanal</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">😊</span>
+                        <span class="stat-label">A tu gusto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <a href="shop.html?cat=icopor" class="hero-card"
+                    style="background: linear-gradient(135deg,#FF6B6B,#FFD93D);">
+                    ☀️
+                    <span class="hero-card-label">Icopor</span>
+                </a>
+                <a href="shop.html?cat=foamy" class="hero-card"
+                    style="background: linear-gradient(135deg,#f953c6,#9B5DE5);">
+                    🎨
+                    <span class="hero-card-label">Foamy</span>
+                </a>
+                <a href="shop.html?cat=carton" class="hero-card"
+                    style="background: linear-gradient(135deg,#6BCB77,#4facfe);">
+                    🎈
+                    <span class="hero-card-label">Cartón</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CATEGORÍAS ====== -->
+    <div id="categorias">
+        <div class="section">
+            <div class="section-header reveal">
+                <span class="section-tag">Materiales</span>
+                <h2>Nuestras <span class="gradient-text">Categorías</span></h2>
+                <p>Trabajamos con tres materiales premium para crear las decoraciones más coloridas y originales</p>
+            </div>
+            <div class="categories-grid">
+                <a href="shop.html?cat=icopor" class="category-card cat-icopor reveal" style="text-decoration:none">
+                    <span class="category-emoji">☀️</span>
+                    <h3>Icopor</h3>
+                    <p>Letras 3D, coronas, centros de mesa y figuras decorativas en poliestireno pintadas a mano.</p>
+                    <span class="category-count">4 productos</span>
+                </a>
+                <a href="shop.html?cat=foamy" class="category-card cat-foamy reveal" style="text-decoration:none">
+                    <span class="category-emoji">🎨</span>
+                    <h3>Foamy</h3>
+                    <p>Flores, figuras temáticas, guirnaldas y kits de decoración para todo tipo de eventos.</p>
+                    <span class="category-count">4 productos</span>
+                </a>
+                <a href="shop.html?cat=carton" class="category-card cat-carton reveal" style="text-decoration:none">
+                    <span class="category-emoji">🎈</span>
+                    <h3>Cartón</h3>
+                    <p>Cajas decoradas, marcos porta retratos, letreros personalizados y sets completos.</p>
+                    <span class="category-count">4 productos</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== PRODUCTOS DESTACADOS ====== -->
+    <div class="section-dark">
+        <div class="section">
+            <div class="section-header reveal">
+                <span class="section-tag">Destacados</span>
+                <h2>Productos <span class="gradient-text">más amados</span> ❤️</h2>
+                <p>Los favoritos de nuestros clientes, cada uno hecho con dedicación y mucho color</p>
+            </div>
+            <div class="products-grid" id="featured-products"></div>
+            <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+                <a href="shop.html" class="btn btn-secondary">
+                    <i class="fas fa-th-large"></i> Ver todos los productos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== NOSOTROS ====== -->
+    <div id="nosotros">
+        <div class="section">
+            <div class="about-section-grid">
+                <div class="reveal">
+                    <span class="section-tag">Quiénes somos</span>
+                    <h2 style="font-size: clamp(1.8rem,3vw,2.5rem); font-weight:800; margin:0.5rem 0 1rem;">
+                        Hechos con amor<br><span class="gradient-text">para ti</span> 🥰
+                    </h2>
+                    <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.5rem;">
+                        Somos <strong style="color:white">Mon Ami</strong>, un emprendimiento barranquillero apasionado
+                        por las manualidades y la creatividad.
+                        Transformamos Icopor, Foamy y Cartón en piezas únicas que alegran tus celebraciones.
+                    </p>
+                    <p style="color:var(--text-muted); line-height:1.8; margin-bottom:2rem;">
+                        Cada decoración es elaborada artesanalmente con los mejores materiales y mucho cariño.
+                        Nos encanta trabajar con tus ideas para crear algo verdaderamente especial y personalizado.
+                    </p>
+                    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                        <a href="https://wa.me/573504974950?text=¡Hola! Me gustaría saber más sobre Mon Ami 😊"
+                            target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Escríbenos
+                        </a>
+                        <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-instagram"></i> @monamiquilla
+                        </a>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="about-cards-grid">
+                        <div class="about-card" style="background:linear-gradient(135deg,#FF6B6B,#FFD93D);">
+                            <span class="about-card-emoji">✂️</span>
+                            <h4>Artesanal</h4>
+                            <p>Cada pieza hecha a mano</p>
+                        </div>
+                        <div class="about-card" style="background:linear-gradient(135deg,#9B5DE5,#f953c6);">
+                            <span class="about-card-emoji">🌈</span>
+                            <h4>Colorido</h4>
+                            <p>Muchos colores y diseños</p>
+                        </div>
+                        <div class="about-card" style="background:linear-gradient(135deg,#6BCB77,#4facfe);">
+                            <span class="about-card-emoji">💡</span>
+                            <h4>Tu idea</h4>
+                            <p>Personalizamos todo</p>
+                        </div>
+                        <div class="about-card" style="background:linear-gradient(135deg,#F7971E,#FFD200);">
+                            <span class="about-card-emoji">❤️</span>
+                            <h4>Con amor</h4>
+                            <p>Pasión en cada pieza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== BANNER CTA ====== -->
+    <div class="section-full">
+        <div class="banner-cta reveal">
+            <div class="cta-emojis">🎉 ✨ 🎂 🌺 🎁</div>
+            <h2>¿Tienes una idea especial? <br>¡Cuéntanos!</h2>
+            <p>Diseñamos decoraciones 100% personalizadas para cumpleaños, bodas, baby showers,
+                quinceañeras y cualquier evento. ¡Trae tu idea!</p>
+            <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 🎨 Tengo una idea para una decoración personalizada, me gustaría cotizarla."
+                target="_blank" class="btn btn-whatsapp" style="display:inline-flex; margin:0 auto;">
+                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- ====== CONTACTO ====== -->
+    <div id="contacto" class="section-dark">
+        <div class="section">
+            <div class="section-header reveal">
+                <span class="section-tag">Contacto</span>
+                <h2>Encuéntranos <span class="gradient-text">aquí</span> 📍</h2>
+                <p>Estamos en Barranquilla y llegamos a donde estés</p>
+            </div>
+            <div
+                style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; max-width:800px; margin:0 auto;">
+                <a href="https://wa.me/573504974950" target="_blank" class="contact-tile reveal"
+                    style="background:var(--dark-card); border:1px solid var(--border); border-radius:16px; padding:2rem; text-align:center; text-decoration:none; transition:all 0.3s; display:block;">
+                    <div style="font-size:2.5rem; margin-bottom:0.75rem;">📱</div>
+                    <h4 style="font-weight:700; margin-bottom:0.35rem;">WhatsApp</h4>
+                    <p style="color:var(--text-muted); font-size:0.88rem;">+57 350 497 4950</p>
+                </a>
+                <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="contact-tile reveal"
+                    style="background:var(--dark-card); border:1px solid var(--border); border-radius:16px; padding:2rem; text-align:center; text-decoration:none; transition:all 0.3s; display:block;">
+                    <div style="font-size:2.5rem; margin-bottom:0.75rem;">📸</div>
+                    <h4 style="font-weight:700; margin-bottom:0.35rem;">Instagram</h4>
+                    <p style="color:var(--text-muted); font-size:0.88rem;">@monamiquilla</p>
+                </a>
+                <div class="contact-tile reveal"
+                    style="background:var(--dark-card); border:1px solid var(--border); border-radius:16px; padding:2rem; text-align:center;">
+                    <div style="font-size:2.5rem; margin-bottom:0.75rem;">📍</div>
+                    <h4 style="font-weight:700; margin-bottom:0.35rem;">Ubicación</h4>
+                    <p style="color:var(--text-muted); font-size:0.88rem;">Barranquilla, Colombia</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <img src="img/Logo_monami-modified.png" alt="Mon Ami Logo">
+                    <span class="footer-logo-text">Mon Ami</span>
+                </div>
+                <p class="footer-desc">
+                    Decoraciones artesanales hechas con amor en Barranquilla.<br>
+                    ¡Trae tu idea, nosotros los pinceles y colores! 🎨
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="social-btn ig"
+                        title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/573504974950" target="_blank" class="social-btn wa" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Tienda</h4>
+                <ul>
+                    <li><a href="shop.html">Todos los productos</a></li>
+                    <li><a href="shop.html?cat=icopor">Icopor ☀️</a></li>
+                    <li><a href="shop.html?cat=foamy">Foamy 🎨</a></li>
+                    <li><a href="shop.html?cat=carton">Cartón 🎈</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="#nosotros">Historia</a></li>
+                    <li><a href="#categorias">Materiales</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="https://www.instagram.com/monamiquilla/" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contacto</h4>
+                <div class="footer-contact">
+                    <p><i class="fab fa-whatsapp" style="color:#25D366"></i> +57 350 497 4950</p>
+                    <p><i class="fab fa-instagram" style="color:#E1306C"></i> @monamiquilla</p>
+                    <p><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Barranquilla, Colombia</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Mon Ami Quilla — Todos los derechos reservados</p>
+            <p>Hecho con ❤️ en Barranquilla 🇨🇴</p>
+        </div>
+    </footer>
+
+    <!-- ====== CARRITO LATERAL ====== -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button id="cart-close" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div id="cart-empty">
+            <span class="empty-emoji">🛍️</span>
+            <p>Tu carrito está vacío.<br>¡Agrega productos que te gusten!</p>
+            <a href="shop.html" class="btn btn-primary btn-sm"
+                onclick="document.getElementById('cart-close').click()">Ver Tienda</a>
+        </div>
+        <div id="cart-items"></div>
+        <div id="cart-footer" class="hidden">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total estimado:</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button id="whatsapp-order-btn" class="btn btn-whatsapp" style="width:100%; justify-content:center;">
+                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </button>
+            <p class="cart-note">Los precios son referenciales. El valor final se confirma por WhatsApp.</p>
+        </div>
+    </aside>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 😊" target="_blank" class="wa-float"
+        title="Chateá con nosotros">
+        <div class="wa-float-pulse"></div>
+        <i class="fab fa-whatsapp"></i>
     </a>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html" class="active">Inicio</a>
-      <a href="shop.html">Tienda</a>
-      <a href="#categorias">Categorías</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-    <div class="nav-actions">
-      <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="nav-ig-btn" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <button id="cart-btn" aria-label="Ver carrito">
-        <i class="fas fa-shopping-bag"></i>
-        <span>Carrito</span>
-        <span class="cart-badge hidden">0</span>
-      </button>
-    </div>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
 
-  <!-- ====== HERO ====== -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-particles" id="particles"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <i class="fas fa-map-marker-alt"></i>
-          Barranquilla, Colombia
-        </div>
-        <h1 class="hero-title">
-          Trae tu idea,<br>
-          <span class="gradient-text">nosotros los pinceles</span><br>
-          y colores 🎨
-        </h1>
-        <p class="hero-subtitle">
-          Creamos decoraciones únicas en Icopor, Foamy y Cartón para tus eventos especiales.
-          Cada pieza es hecha con mucho amor y creatividad. <strong>¡Coleccionemos sonrisas!</strong>
-        </p>
-        <div class="hero-ctas">
-          <a href="shop.html" class="btn btn-primary">
-            <i class="fas fa-store"></i> Ver Tienda
-          </a>
-          <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 😊 Me gustaría cotizar una decoración personalizada." target="_blank" class="btn btn-secondary">
-            <i class="fab fa-whatsapp"></i> Cotizar
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-value">+200</span>
-            <span class="stat-label">Diseños</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">100%</span>
-            <span class="stat-label">Artesanal</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">😊</span>
-            <span class="stat-label">A tu gusto</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <a href="shop.html?cat=icopor" class="hero-card" style="background: linear-gradient(135deg,#FF6B6B,#FFD93D);">
-          ☀️
-          <span class="hero-card-label">Icopor</span>
-        </a>
-        <a href="shop.html?cat=foamy" class="hero-card" style="background: linear-gradient(135deg,#f953c6,#9B5DE5);">
-          🎨
-          <span class="hero-card-label">Foamy</span>
-        </a>
-        <a href="shop.html?cat=carton" class="hero-card" style="background: linear-gradient(135deg,#6BCB77,#4facfe);">
-          🎈
-          <span class="hero-card-label">Cartón</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CATEGORÍAS ====== -->
-  <div id="categorias">
-    <div class="section">
-      <div class="section-header reveal">
-        <span class="section-tag">Materiales</span>
-        <h2>Nuestras <span class="gradient-text">Categorías</span></h2>
-        <p>Trabajamos con tres materiales premium para crear las decoraciones más coloridas y originales</p>
-      </div>
-      <div class="categories-grid">
-        <a href="shop.html?cat=icopor" class="category-card cat-icopor reveal" style="text-decoration:none">
-          <span class="category-emoji">☀️</span>
-          <h3>Icopor</h3>
-          <p>Letras 3D, coronas, centros de mesa y figuras decorativas en poliestireno pintadas a mano.</p>
-          <span class="category-count">4 productos</span>
-        </a>
-        <a href="shop.html?cat=foamy" class="category-card cat-foamy reveal" style="text-decoration:none">
-          <span class="category-emoji">🎨</span>
-          <h3>Foamy</h3>
-          <p>Flores, figuras temáticas, guirnaldas y kits de decoración para todo tipo de eventos.</p>
-          <span class="category-count">4 productos</span>
-        </a>
-        <a href="shop.html?cat=carton" class="category-card cat-carton reveal" style="text-decoration:none">
-          <span class="category-emoji">🎈</span>
-          <h3>Cartón</h3>
-          <p>Cajas decoradas, marcos porta retratos, letreros personalizados y sets completos.</p>
-          <span class="category-count">4 productos</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ====== PRODUCTOS DESTACADOS ====== -->
-  <div class="section-dark">
-    <div class="section">
-      <div class="section-header reveal">
-        <span class="section-tag">Destacados</span>
-        <h2>Productos <span class="gradient-text">más amados</span> ❤️</h2>
-        <p>Los favoritos de nuestros clientes, cada uno hecho con dedicación y mucho color</p>
-      </div>
-      <div class="products-grid" id="featured-products"></div>
-      <div style="text-align:center; margin-top:2.5rem;" class="reveal">
-        <a href="shop.html" class="btn btn-secondary">
-          <i class="fas fa-th-large"></i> Ver todos los productos
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ====== NOSOTROS ====== -->
-  <div id="nosotros">
-    <div class="section">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
-        <div class="reveal">
-          <span class="section-tag">Quiénes somos</span>
-          <h2 style="font-size: clamp(1.8rem,3vw,2.5rem); font-weight:800; margin:0.5rem 0 1rem;">
-            Hechos con amor<br><span class="gradient-text">para ti</span> 🥰
-          </h2>
-          <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.5rem;">
-            Somos <strong style="color:white">Mon Ami</strong>, un emprendimiento barranquillero apasionado por las manualidades y la creatividad. 
-            Transformamos Icopor, Foamy y Cartón en piezas únicas que alegran tus celebraciones.
-          </p>
-          <p style="color:var(--text-muted); line-height:1.8; margin-bottom:2rem;">
-            Cada decoración es elaborada artesanalmente con los mejores materiales y mucho cariño. 
-            Nos encanta trabajar con tus ideas para crear algo verdaderamente especial y personalizado.
-          </p>
-          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-            <a href="https://wa.me/573504974950?text=¡Hola! Me gustaría saber más sobre Mon Ami 😊" target="_blank" class="btn btn-primary">
-              <i class="fab fa-whatsapp"></i> Escríbenos
-            </a>
-            <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="btn btn-secondary">
-              <i class="fab fa-instagram"></i> @monamiquilla
-            </a>
-          </div>
-        </div>
-        <div class="reveal">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-            <div class="about-card" style="background:linear-gradient(135deg,#FF6B6B,#FFD93D); border-radius:16px; padding:2rem; text-align:center; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem;">
-              <span style="font-size:3rem;">✂️</span>
-              <h4 style="font-size:1rem; font-weight:700;">Artesanal</h4>
-              <p style="font-size:0.78rem; color:rgba(255,255,255,0.85);">Cada pieza hecha a mano</p>
-            </div>
-            <div class="about-card" style="background:linear-gradient(135deg,#9B5DE5,#f953c6); border-radius:16px; padding:2rem; text-align:center; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem;">
-              <span style="font-size:3rem;">🌈</span>
-              <h4 style="font-size:1rem; font-weight:700;">Colorido</h4>
-              <p style="font-size:0.78rem; color:rgba(255,255,255,0.85);">Muchos colores y diseños</p>
-            </div>
-            <div class="about-card" style="background:linear-gradient(135deg,#6BCB77,#4facfe); border-radius:16px; padding:2rem; text-align:center; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem;">
-              <span style="font-size:3rem;">💡</span>
-              <h4 style="font-size:1rem; font-weight:700;">Tu idea</h4>
-              <p style="font-size:0.78rem; color:rgba(255,255,255,0.85);">Personalizamos todo</p>
-            </div>
-            <div class="about-card" style="background:linear-gradient(135deg,#F7971E,#FFD200); border-radius:16px; padding:2rem; text-align:center; aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem;">
-              <span style="font-size:3rem;">❤️</span>
-              <h4 style="font-size:1rem; font-weight:700;">Con amor</h4>
-              <p style="font-size:0.78rem; color:rgba(255,255,255,0.85);">Pasión en cada pieza</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ====== BANNER CTA ====== -->
-  <div class="section-full">
-    <div class="banner-cta reveal">
-      <div class="cta-emojis">🎉 ✨ 🎂 🌺 🎁</div>
-      <h2>¿Tienes una idea especial? <br>¡Cuéntanos!</h2>
-      <p>Diseñamos decoraciones 100% personalizadas para cumpleaños, bodas, baby showers,
-        quinceañeras y cualquier evento. ¡Trae tu idea!</p>
-      <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 🎨 Tengo una idea para una decoración personalizada, me gustaría cotizarla." target="_blank" class="btn btn-whatsapp" style="display:inline-flex; margin:0 auto;">
-        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <!-- ====== CONTACTO ====== -->
-  <div id="contacto" class="section-dark">
-    <div class="section">
-      <div class="section-header reveal">
-        <span class="section-tag">Contacto</span>
-        <h2>Encuéntranos <span class="gradient-text">aquí</span> 📍</h2>
-        <p>Estamos en Barranquilla y llegamos a donde estés</p>
-      </div>
-      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; max-width:800px; margin:0 auto;">
-        <a href="https://wa.me/573504974950" target="_blank" class="contact-tile reveal" style="background:var(--dark-card); border:1px solid var(--border); border-radius:16px; padding:2rem; text-align:center; text-decoration:none; transition:all 0.3s; display:block;">
-          <div style="font-size:2.5rem; margin-bottom:0.75rem;">📱</div>
-          <h4 style="font-weight:700; margin-bottom:0.35rem;">WhatsApp</h4>
-          <p style="color:var(--text-muted); font-size:0.88rem;">+57 350 497 4950</p>
-        </a>
-        <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="contact-tile reveal" style="background:var(--dark-card); border:1px solid var(--border); border-radius:16px; padding:2rem; text-align:center; text-decoration:none; transition:all 0.3s; display:block;">
-          <div style="font-size:2.5rem; margin-bottom:0.75rem;">📸</div>
-          <h4 style="font-weight:700; margin-bottom:0.35rem;">Instagram</h4>
-          <p style="color:var(--text-muted); font-size:0.88rem;">@monamiquilla</p>
-        </a>
-        <div class="contact-tile reveal" style="background:var(--dark-card); border:1px solid var(--border); border-radius:16px; padding:2rem; text-align:center;">
-          <div style="font-size:2.5rem; margin-bottom:0.75rem;">📍</div>
-          <h4 style="font-weight:700; margin-bottom:0.35rem;">Ubicación</h4>
-          <p style="color:var(--text-muted); font-size:0.88rem;">Barranquilla, Colombia</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ====== FOOTER ====== -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">
-          <img src="img/Logo_monami-modified.png" alt="Mon Ami Logo">
-          <span class="footer-logo-text">Mon Ami</span>
-        </div>
-        <p class="footer-desc">
-          Decoraciones artesanales hechas con amor en Barranquilla.<br>
-          ¡Trae tu idea, nosotros los pinceles y colores! 🎨
-        </p>
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="social-btn ig" title="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://wa.me/573504974950" target="_blank" class="social-btn wa" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <h4>Tienda</h4>
-        <ul>
-          <li><a href="shop.html">Todos los productos</a></li>
-          <li><a href="shop.html?cat=icopor">Icopor ☀️</a></li>
-          <li><a href="shop.html?cat=foamy">Foamy 🎨</a></li>
-          <li><a href="shop.html?cat=carton">Cartón 🎈</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Nosotros</h4>
-        <ul>
-          <li><a href="#nosotros">Historia</a></li>
-          <li><a href="#categorias">Materiales</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li><a href="https://www.instagram.com/monamiquilla/" target="_blank">Instagram</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contacto</h4>
-        <div class="footer-contact">
-          <p><i class="fab fa-whatsapp" style="color:#25D366"></i> +57 350 497 4950</p>
-          <p><i class="fab fa-instagram" style="color:#E1306C"></i> @monamiquilla</p>
-          <p><i class="fas fa-map-marker-alt" style="color:var(--primary)"></i> Barranquilla, Colombia</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Mon Ami Quilla — Todos los derechos reservados</p>
-      <p>Hecho con ❤️ en Barranquilla 🇨🇴</p>
-    </div>
-  </footer>
-
-  <!-- ====== CARRITO LATERAL ====== -->
-  <div class="cart-overlay" id="cart-overlay"></div>
-  <aside class="cart-sidebar" id="cart-sidebar">
-    <div class="cart-header">
-      <h3>🛒 Tu Carrito</h3>
-      <button id="cart-close" aria-label="Cerrar carrito">✕</button>
-    </div>
-    <div id="cart-empty">
-      <span class="empty-emoji">🛍️</span>
-      <p>Tu carrito está vacío.<br>¡Agrega productos que te gusten!</p>
-      <a href="shop.html" class="btn btn-primary btn-sm" onclick="document.getElementById('cart-close').click()">Ver Tienda</a>
-    </div>
-    <div id="cart-items"></div>
-    <div id="cart-footer" class="hidden">
-      <div class="cart-total-row">
-        <span class="cart-total-label">Total estimado:</span>
-        <span id="cart-total">$0</span>
-      </div>
-      <button id="whatsapp-order-btn" class="btn btn-whatsapp" style="width:100%; justify-content:center;">
-        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-      </button>
-      <p class="cart-note">Los precios son referenciales. El valor final se confirma por WhatsApp.</p>
-    </div>
-  </aside>
-
-  <!-- Toast -->
-  <div id="toast"></div>
-
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 😊" target="_blank" class="wa-float" title="Chateá con nosotros">
-    <div class="wa-float-pulse"></div>
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
