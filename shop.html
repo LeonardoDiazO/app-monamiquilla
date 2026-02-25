@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda – Mon Ami | Decoraciones Artesanales Barranquilla</title>
+    <meta name="description"
+        content="Catálogo completo de decoraciones artesanales en Icopor, Foamy y Cartón. Filtra por categoría y pide por WhatsApp.">
+    <link rel="icon" href="img/Logo_monami-modified.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Estilos extra para la página tienda */
+        .shop-page {
+            padding-top: var(--navbar-h);
+            min-height: 100vh;
+        }
+
+        .shop-hero {
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 107, 107, 0.2) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 30%, rgba(255, 217, 61, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 5%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .no-results span {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .results-count {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="img/Logo_monami-modified.png" alt="Mon Ami Logo">
+            <span class="nav-logo-text">Mon Ami</span>
+        </a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="shop.html" class="active">Tienda</a>
+            <a href="index.html#categorias">Categorías</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+        <div class="nav-actions">
+            <a href="https://www.instagram.com/monamiquilla/" target="_blank" class="nav-ig-btn" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <button id="cart-btn" aria-label="Ver carrito">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Carrito</span>
+                <span class="cart-badge hidden">0</span>
+            </button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main class="shop-page">
+        <!-- Shop Hero -->
+        <div class="shop-hero">
+            <div class="shop-header" style="max-width:1200px; margin:0 auto; padding:0;">
+                <h1 class="shop-title">🛍️ Nuestra <span class="gradient-text">Tienda</span></h1>
+                <p class="shop-subtitle">Decoraciones artesanales hechas con amor. Filtra por categoría y pide por
+                    WhatsApp.</p>
+
+                <!-- Filtros + Búsqueda -->
+                <div class="filter-bar" id="filter-bar">
+                    <button class="filter-btn active" data-cat="all">✨ Todos</button>
+                    <button class="filter-btn" data-cat="icopor">☀️ Icopor</button>
+                    <button class="filter-btn" data-cat="foamy">🎨 Foamy</button>
+                    <button class="filter-btn" data-cat="carton">🎈 Cartón</button>
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Buscar decoraciones..." autocomplete="off">
+                    </div>
+                </div>
+
+                <p class="results-count" id="results-count"></p>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div style="max-width:1200px; margin:0 auto; padding:2rem 5% 4rem;">
+            <div class="products-grid" id="products-grid"></div>
+        </div>
+
+        <!-- Banner CTA -->
+        <div style="padding:0 5% 4rem;">
+            <div class="banner-cta">
+                <div class="cta-emojis">🎂 🌺 👶 👑 🎁</div>
+                <h2>¿No encontraste lo que buscas?</h2>
+                <p>Hacemos decoraciones 100% personalizadas. ¡Cuéntanos tu idea por WhatsApp!</p>
+                <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 🎨 Quisiera cotizar una decoración personalizada."
+                    target="_blank" class="btn btn-whatsapp" style="display:inline-flex; margin:0 auto;">
+                    <i class="fab fa-whatsapp"></i> Solicitar diseño personalizado
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====== CARRITO LATERAL ====== -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>🛒 Tu Carrito</h3>
+            <button id="cart-close" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div id="cart-empty">
+            <span class="empty-emoji">🛍️</span>
+            <p>Tu carrito está vacío.<br>¡Explora nuestra tienda!</p>
+        </div>
+        <div id="cart-items"></div>
+        <div id="cart-footer" class="hidden">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total estimado:</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button id="whatsapp-order-btn" class="btn btn-whatsapp" style="width:100%; justify-content:center;">
+                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </button>
+            <p class="cart-note">Los precios son referenciales. El valor final se confirma por WhatsApp.</p>
+        </div>
+    </aside>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/573504974950?text=¡Hola Mon Ami! 😊" target="_blank" class="wa-float"
+        title="Chateá con nosotros">
+        <div class="wa-float-pulse"></div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
