@@ -1,0 +1,7 @@
+# robots.txt – Mon Ami Quilla
+# INSTRUCCIÓN: Reemplaza https://monamiquilla.netlify.app con tu URL real una vez publicado
+
+User-agent: *
+Allow: /
+
+Sitemap: https://monamiquilla.netlify.app/sitemap.xml
