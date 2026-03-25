@@ -36,6 +36,50 @@ function initNavbar() {
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 20);
     });
+
+    // Scroll-spy: actualiza el link activo según la sección visible
+    const navLinks = navbar.querySelectorAll('.nav-links a');
+    const sections = ['categorias', 'nosotros', 'contacto', 'testimonios']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+    if (sections.length === 0) return;
+
+    function setActive(id) {
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            const isSection = href === `#${id}`;
+            const isHome = (id === null) && (href === 'index.html' || href === './');
+            link.classList.toggle('active', isSection || isHome);
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setActive(entry.target.id);
+            }
+        });
+
+        // Si ninguna sección está visible y estamos arriba, activar Inicio
+        const anyVisible = entries.some(e => e.isIntersecting);
+        if (!anyVisible && window.scrollY < 200) {
+            setActive(null);
+        }
+    }, { threshold: 0.3, rootMargin: '-60px 0px -40% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Al hacer click en un link de sección, actívalo de inmediato
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });
+    });
 }
 
 // =============================================
